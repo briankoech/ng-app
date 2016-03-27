@@ -1,7 +1,6 @@
 # Angular Event Registration — Demo Application for Angular JS
 
-This project is a sample application demonstrating a more fully developed realistic single page
-angular application.
+This project is a sample application demonstrating a more fully developed realistic single page angular application.
 
 ### Server
 
@@ -11,4 +10,4 @@ If using the node server, from the command line run "npm install" and then eithe
 
 Navigate your browser to `http://localhost:8000/` to see the app running in your browser. You may have to add the page to the url such as EventDetails.html depending on where you are at in the course. The port may be configured either in the node server or on IIS.
 
-
+Made with love by Brian Koech
