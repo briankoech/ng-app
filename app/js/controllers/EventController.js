@@ -11,7 +11,7 @@ eventsApp.controller('EventController',
     $scope.myclass = 'blue';
     $scope.event = {
       name: 'Angular Boot Camp',
-      date: '1/1/1990',
+      date: new Date(),
       time: '10.30 am',
       location: {
         address: 'Google Headquaters',
@@ -21,26 +21,26 @@ eventsApp.controller('EventController',
       imageUrl: '/img/angularjs-logo.png',
       sessions: [
         {
-          name: 'Directive Masterclass',
+          name: 'cDirective Masterclass Introductory',
           creatorName: 'Bob Smith',
-          duration: '1 hr',
+          duration: 1,
           level: 'Advanced',
           abstract: 'In the session you will learn the ins and outs of directives',
           upVoteCount: 0
         },
         {
-          name: 'Scopes for fun and profit',
+          name: 'aScopes for fun and profit',
           creatorName: 'John Doe',
-          duration: '1 hr',
-          level: 'Advanced',
+          duration: 2,
+          level: 'Intermediate',
           abstract: 'In the session you will learn the ins and outs of directives',
           upVoteCount: 0
         },
         {
-          name: 'Well behaved Controllers',
+          name: 'bWell behaved Controllers',
           creatorName: 'Bob Smith',
-          duration: '1 hr',
-          level: 'Advanced',
+          duration: 4,
+          level: 'Introductory',
           abstract: 'In the session you will learn the ins and outs of directives',
           upVoteCount: 0
         },
