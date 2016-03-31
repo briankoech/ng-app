@@ -1,15 +1,17 @@
 'use strict';
 
 eventsApp.controller('EventController',
-  function EventController($scope) {
+  function EventController() {
 
-    $scope.snippet = '<apn style="color:red">Hi there</span>';
-    $scope.boolValue = false;
-    $scope.sortorder = 'name';
-    $scope.buttonDisabled = true;
-    $scope.mystyle = {color: 'red'};
-    $scope.myclass = 'blue';
-    $scope.event = {
+    var self = this;
+
+    self.snippet = '<apn style="color:red">Hi there</span>';
+    self.boolValue = false;
+    self.sortorder = 'name';
+    self.buttonDisabled = true;
+    self.mystyle = {color: 'red'};
+    self.myclass = 'blue';
+    self.event = {
       name: 'Angular Boot Camp',
       date: new Date(),
       time: '10.30 am',
@@ -47,11 +49,11 @@ eventsApp.controller('EventController',
       ]
     };
 
-    $scope.upVoteSession = function(session) {
+    self.upVoteSession = function(session) {
       session.upVoteCount++;
     };
 
-    $scope.downVoteSession = function(session) {
+    self.downVoteSession = function(session) {
       session.upVoteCount--;
     };
   }

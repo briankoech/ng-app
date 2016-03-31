@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Registration</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body ng-cloak>
+<div class="container">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <ul class="nav">
+      </ul>
+    </div>
+  </div>
+  <div class="" ng-controller="EditEventController" style="padding-left:20px; padding-right: 20px">
+    <div class="container">
+      <h1>New Event</h1>
+      <hr />
+      <form>
+        <fieldset>
+          <label for="eventName">Event Name:</label>
+          <input id="eventName" type="text" ng-model="event.name" placeholder="Name of your event"  />
+          <label for="eventDate">Event Date:</label>
+          <input id="eventDate" type="text" ng-model="event.date" placeholder="format (mm/dd/yyy)..." />
+          <label for="eventTime"></label>
+        </fieldset
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/underscore-11.2.2.min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<script src="/lib/angular/angular.js"></script>
+<script src="/lib/angular/angular-sanitize.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/controllers/EventController.js"></script>
+<script src="/js/filters.js"></script>
+
+</body>
+</html>
