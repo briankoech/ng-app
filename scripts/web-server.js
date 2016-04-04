@@ -14,7 +14,7 @@ app.listen(8000, function(err) {
     console.log(err);
   } else {
     console.log('connected!');
+    console.log('Listening on port 8000....');
   }
 });
 
-console.log('Listening on port 8000....');
