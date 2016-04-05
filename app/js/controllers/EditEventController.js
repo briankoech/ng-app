@@ -1,11 +1,18 @@
 (function() {
   'use strict';
 
-  eventsApp.controller('EditEventController', function($scope) {
+  eventsApp.controller('EditEventController', function($scope, eventData) {
       $scope.saveEvent = function(event, newEventForm) {
-        console.log(newEventForm);
         if(newEventForm.$valid) {
-          window.alert(event.name);
+          eventData.save(event)
+            .$promise
+            .then(function(response) {
+              console.log('success', response);
+              window.alert(event.name);
+            })
+            .catch(function(err) {
+              console.log('failure', err);
+            });
         };
       };
 

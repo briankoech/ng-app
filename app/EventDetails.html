@@ -11,11 +11,15 @@
   <div class="navbar">
     <div class="navbar-inner">
       <ul class="nav">
+        <li>
+          <a href="/newEvent.html">Create Event</a>
+        </li>
       </ul>
     </div>
   </div>
   <div ng-controller="EventController" style="padding-left:20px; padding-right:20px">
     <img ng-src="{{event.imageUrl}}" alt="{{event.name}}">
+    <button type="button" ng-click="scrollToSession()" class="btn btn-primary">Scroll</button>
     <div class="row">
       <div class="span11">
         <h2 ng-class="myclass">{{event.name | uppercase}}</h2>
@@ -57,7 +61,7 @@
     <option selected value="Advanced">Advanced</option>
   </select>
   <ul class="thumbnails">
-    <li ng-repeat="session in event.sessions | orderBy:sortorder | limitTo:4 | filter:query">
+    <li ng-repeat="session in event.sessions | orderBy:sortorder | limitTo:4 | filter:query" id="session{{session.id}}">
       <div class="row session">
         <div class="span0 well votingWidget">
           <div class="votingButton" ng-click="upVoteSession(session)">
@@ -88,6 +92,7 @@
 <script src="/lib/underscore-1.4.4.min.js"></script>
 <script src="/lib/bootstrap.min.js"></script>
 <script src="/lib/angular/angular.js"></script>
+<script src="/lib/angular/angular-resource.js"></script>
 <script src="/lib/angular/angular-sanitize.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/services/EventData.js"></script>

@@ -1,44 +1,15 @@
 (function() {
   'use strict';
-  eventsApp.factory('eventData', function() {
+  eventsApp.factory('eventData', function($resource) {
+    var resource = $resource('/data/event/:id', {id: '@id'});
     return {
-       event : {
-        name: 'Angular Boot Camp',
-        date: new Date(),
-        time: '10.30 am',
-        location: {
-          address: 'Google Headquaters',
-          city: 'Mountain View',
-          province: 'CA'
-        },
-        imageUrl: '/img/angularjs-logo.png',
-        sessions: [
-          {
-            name: 'cDirective Masterclass Introductory',
-            creatorName: 'Bob Smith',
-            duration: 1,
-            level: 'Advanced',
-            abstract: 'In the session you will learn the ins and outs of directives',
-            upVoteCount: 0
-          },
-          {
-            name: 'aScopes for fun and profit',
-            creatorName: 'John Doe',
-            duration: 2,
-            level: 'Intermediate',
-            abstract: 'In the session you will learn the ins and outs of directives',
-            upVoteCount: 0
-          },
-          {
-            name: 'bWell behaved Controllers',
-            creatorName: 'Bob Smith',
-            duration: 4,
-            level: 'Introductory',
-            abstract: 'In the session you will learn the ins and outs of directives',
-            upVoteCount: 0
-          },
-        ]
-      }
+       getEvent: function() {
+        return resource.get({id: 1});
+       },
+       save: function(event) {
+        event.id = 999;
+        return resource.save(event);
+       }
     };
   });
 })();

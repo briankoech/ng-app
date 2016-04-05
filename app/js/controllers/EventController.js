@@ -2,24 +2,33 @@
   'use strict';
 
   eventsApp.controller('EventController',
-    function EventController(eventData) {
+    function EventController($scope, eventData, $log, $anchorScroll) {
 
-      var self = this;
+      $scope.snippet = '<span style="color:red">Hi there</span>';
+      $scope.boolValue = false;
+      $scope.sortorder = 'name';
+      $scope.buttonDisabled = true;
+      $scope.mystyle = {color: 'red'};
+      $scope.myclass = 'blue';
+      eventData.getEvent()
+        .$promise
+        .then(function(event) {
+          $scope.event = event;
+          console.log(event);
+        })
+        .catch(function(response) {
+          console.log(response);
+        });
 
-      self.snippet = '<apn style="color:red">Hi there</span>';
-      self.boolValue = false;
-      self.sortorder = 'name';
-      self.buttonDisabled = true;
-      self.mystyle = {color: 'red'};
-      self.myclass = 'blue';
-      self.event = eventData.event;
-     
-
-      self.upVoteSession = function(session) {
+      $scope.upVoteSession = function(session) {
         session.upVoteCount++;
       };
 
-      self.downVoteSession = function(session) {
+      $scope.scrollToSession = function() {
+        $anchorScroll();
+      };
+
+      $scope.downVoteSession = function(session) {
         session.upVoteCount--;
       };
     }
