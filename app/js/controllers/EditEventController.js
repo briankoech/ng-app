@@ -13,7 +13,7 @@
             .catch(function(err) {
               console.log('failure', err);
             });
-        };
+        }
       };
 
       $scope.cancelEdit  = function() {
