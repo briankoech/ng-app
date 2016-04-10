@@ -9,6 +9,9 @@
        save: function(event) {
         event.id = 999;
         return resource.save(event);
+       },
+       getAllEvents: function() {
+        return resource.query();
        }
     };
   });
