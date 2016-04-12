@@ -7,7 +7,10 @@
       //   var markup = '<input type="text" ng-model="sampleData" /> {{sampleData}} <br />';
       //   angular.element(element).html($compile(markup)(scope));
       // }
-      template: '<input type="text" ng-model="sampleData" /> {{sampleData}} <br />'
+      template: '<input type="text" ng-model="sampleData" /> {{sampleData}} <br />',
+      scope: {
+        
+      }
     };
   });
 })();
