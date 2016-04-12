@@ -6,18 +6,19 @@ module.exports.get = function(req, res) {
   res.send(event);
 };
 module.exports.getAll = function(req, res) {
-  var path = '../app/data/event/';
+  var path = 'app/data/event/';
   var files = [];
   try {
     files = fs.readdirSync(path);
     console.log(files);
   }
   catch (e) {
-    res.send('[]');
-    res.end();
+    console.log(e);
+    return res.send('[]');
+    //res.end();
   }
 
-  var results = "[";
+  var results = '[';
   for(var idx = 0; idx < files.length; idx++) {
     if(files[idx].indexOf('.json') == files[idx].length - 5) {
       results += fs.readFileSync(path + '/' + files[idx]) + ',';
@@ -27,8 +28,8 @@ module.exports.getAll = function(req, res) {
   results += ']';
 
   res.setHeader('Content-Type', 'application/json');
-  res.send(results);
-  res.end();
+  return res.send(results);
+  //res.end();
 };
 
 module.exports.save = function(req, res) {
